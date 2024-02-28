@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var tabuleiro = [[" ", " ", " "],[" ", " ", " "], [" ", " ", " "]];
+            function imprimirJogada(a, b, jogador){
+                tabuleiro[a][b]=jogador;
+                document.write("<table border=1>");
+                for(let i=0; i<3; i++){
+                    document.write("<tr>");
+                    for(let j=0; j<3; j++)
+                        document.write("<td>"+tabuleiro[i][j]+"</td>");
+                    document.write("</tr>");
+                }            
+                document.write("</table>");
+            }
+            function jogada(){
+                imprimirJogada(prompt("i", ""),prompt("j", ""),prompt("jogador", ""));
+                document.write("<button onclick=\"jogada()\">Próximo Jogador2</button>");
+            }
+            function jogador(a){
+                if(a.equals("X"))
+                    document.write("0");
+                else
+                    document.write("X");
+                    document.write("<button onclick=\"jogada()\">Próximo Jogador3</button>");
+                
+            }
+        </script>
+    </head>
+    <body>
+        <script>imprimirJogada(prompt("i", ""),prompt("j", ""),prompt("jogador", ""))</script>
+        <button onclick="jogada()">Próximo Jogador0</button>
+    </body>
+</html>

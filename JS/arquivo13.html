@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+        function adicionar(){
+            $(".lista").append("<li  onclick=\"apagar(this)\">"+prompt("Informe o elemento", "")+"</li>");
+        }
+        function apagar(obj){
+           $(obj).remove();
+        }
+        
+    </script>
+</head>
+  
+<body>
+    <ol class="lista">
+        <li onclick="apagar(this)">primeiro</li>
+        <li onclick="apagar(this)">segundo</li>
+        <li onclick="apagar(this)">terceiro</li>
+        <li onclick="apagar(this)">quarto</li>
+        <li onclick="apagar(this)">quinto</li>
+    </ol>
+    <span class="acao" onclick="adicionar()">Adicionar um elemento na lista</span>
+</body>
+  
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <span style="color:black" id="para1">Lista</span>
+</body>
+<script>
+    var myArray = [
+            'red',
+            'blue',
+            'green',
+            'yellow'
+        ];
+        $.each(myArray, function() {
+            var value = this;
+            $("#para1").append("<div>"+value+"</div>");    
+        });
+</script> 
+</html>

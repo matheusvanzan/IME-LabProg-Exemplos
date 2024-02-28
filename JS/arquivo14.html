@@ -1,0 +1,43 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js">
+      </script>
+		
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function(){
+            $("button").click(function(){
+                $(".frt").add(".br").addClass("selected");
+            });
+        });
+
+      </script>
+		
+      <style>
+         .selected { color:red; }
+      </style>
+   </head>
+	
+   <body>
+
+      <button>Clique aqui para saber os paises que fazem fronteira com o Brasil</button> 
+      <div>
+         <ul>
+            <li class="frt">Argentina</li>
+            <li class="frt">Bolívia</li>
+            <li>Brasil</li>
+            <li>Chile</li>
+            <li class="frt">Colômbia</li>
+            <li>Equador</li>
+            <li class="frt">Guiana</li>
+            <li class="frt">Guiana Francesa</li>
+            <li class="frt">Paraguai</li>
+            <li class="frt">Peru</li>
+            <li class="frt">Suriname</li>
+            <li class="frt">Uruguai</li>
+            <li class="frt">Venezuela</li>
+         </ul>
+      </div>
+   </body>
+</html>
