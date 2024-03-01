@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie um Formulário de Pesquisa usando HTML</title>
+
+    <style>
+
+        /* Styling the Body element 
+
+        i.e. Color, Font, Alignment */
+
+        body {
+
+            background-color: #05c46b;
+
+            font-family: Verdana;
+
+            text-align: center;
+
+        }
+ 
+
+        /* Styling the Form (Color, Padding, Shadow) */
+
+        form {
+
+            background-color: #fff;
+
+            max-width: 500px;
+
+            margin: 50px auto;
+
+            padding: 30px 20px;
+
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+
+        }
+ 
+
+        /* Styling form-control Class */
+
+        .form-control {
+
+            text-align: left;
+
+            margin-bottom: 25px;
+
+        }
+ 
+
+        /* Styling form-control Label */
+
+        .form-control label {
+
+            display: block;
+
+            margin-bottom: 10px;
+
+        }
+ 
+
+        /* Styling form-control input, 
+
+        select, textarea */
+
+        .form-control input,
+
+        .form-control select,
+
+        .form-control textarea {
+
+            border: 1px solid #777;
+
+            border-radius: 2px;
+
+            font-family: inherit;
+
+            padding: 10px;
+
+            display: block;
+
+            width: 95%;
+
+        }
+ 
+
+        /* Styling form-control Radio 
+
+        button and Checkbox */
+
+        .form-control input[type="radio"],
+
+        .form-control input[type="checkbox"] {
+
+            display: inline-block;
+
+            width: auto;
+
+        }
+ 
+
+        /* Styling Button */
+
+        button {
+
+            background-color: #05c46b;
+
+            border: 1px solid #777;
+
+            border-radius: 2px;
+
+            font-family: inherit;
+
+            font-size: 21px;
+
+            display: block;
+
+            width: 100%;
+
+            margin-top: 50px;
+
+            margin-bottom: 20px;
+
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Formulário de Pesquisa</h1>
+    <br>
+    <!-- Criar Formulário -->
+    <form method="POST" action="https://webhook.site/310e5fa4-f2c5-4433-aa4b-e97c3e83cd32">
+        <label for="name" id="label-name">Nome</label>
+        <input type="text" name="name" id="name" placeholder="Digite seu nome" />
+
+        <br><br>
+        <label for="email" id="label-email">Email</label>
+        <input type="email" name="name" id="email" placeholder="Digite seu email" />
+        <br><br>
+        <label for="age" id="label-age">Idade</label>
+        <input type="text" id="age" placeholder="Digite sua idade" />
+        <br><br>
+        <label for="role" id="label-role">Qual opção descreve melhor você?</label>
+        <!-- Opções Dropdown -->
+        <select name="role" id="role">
+            <option value="student">Estudante</option>
+            <option value="intern">Estagiário</option>
+            <option value="professional">Profissional</option>
+            <option value="other">Outro</option>
+        </select>
+        <br><br>
+        <label>Recomendaria este site a um amigo?</label>
+        <!-- Input Tipo Botão de Rádio -->
+        
+        <input type="radio" id="recommend-1" name="recommend">
+        <label for="recommend-1">Sim</label>
+        
+        <input type="radio" id="recommend-2" name="recommend">
+        <label for="recommend-2" >Não</label>      
+        
+        <input type="radio" id="recommend-3" name="recommend">
+        <label for="recommend-3">Talvez</label>
+
+        <br><br>
+        <label>Línguagens e Frameworks conhecidos <small>(Marque todos que se aplicam)</small></label>
+        <br>
+        <!-- Input Tipo Checkbox -->
+        <label for="inp-1">
+            <input type="checkbox" id="inp-1" name="languages">C
+        </label>
+        <br>
+        <label for="inp-2">
+            <input type="checkbox" id="inp-2" name="languages">C++
+        </label>
+        <br>
+        <label for="inp-3">
+            <input type="checkbox" id="inp-3" name="languages">C#
+        </label>
+        <br>
+        <label for="inp-4">
+            <input type="checkbox" id="inp-4" name="languages">Java
+        </label>
+        <br>
+        <label for="inp-5">
+            <input type="checkbox" id="inp-5" name="languages">Python
+        </label>
+        <br>
+        <label for="inp-6">
+            <input type="checkbox" id="inp-6" name="languages">JavaScript
+        </label>
+        <br>
+        <label for="inp-7">
+            <input type="checkbox" id="inp-7" name="languages">React
+        </label>
+        <br>
+        <label for="inp-8">
+            <input type="checkbox" id="inp-8" name="languages">Angular
+        </label>
+        <br>
+        <label for="inp-9">
+            <input type="checkbox" id="inp-9" name="languages">Django
+        </label>
+        <br>
+        <label for="inp-10">
+            <input type="checkbox" id="inp-10" name="languages">Spring
+        </label>
+        <br><br>
+        <label for="comment">Comentários ou sugestões</label>
+        <br>
+        <!-- controle de entrada de texto multilinha -->
+        <textarea name="comment" id="comment" placeholder="Digite seu comentário aqui"></textarea>
+        <br><br>
+        <button type="submit" value="submit">Enviar</button>
+    </form>
+</body>
+</html>
