@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+
+        Insira o valor de N: <input type="text" id="input" />
+        <button id="btn-1">Enviar</button>
+
+        <div id="meu-div">
+
+        </div>
+
+
+        <script>
+            CACHE = [1, 1];
+
+            function fib(x) {
+
+                if (CACHE.length > x) {
+                    return CACHE[x];
+                }
+                
+                if (x==0 || x==1) {
+                    return 1;
+                } else {
+                    var value = fib(x-1)+fib(x-2);
+                    CACHE[x] = value;
+                    return value;
+                }
+            }
+
+            function imprimir(n) {
+                $("#meu-div").append("<ul></ul>");
+
+                for (var i=0; i<n; i+=1) {
+                    var f = fib(i);
+                    console.log(n, f);
+                    $("#meu-div > ul").append("<li>fib(" + i + ") = " + f + "</li>");
+                }
+            }
+
+            $("#btn-1").click(function() {
+                var value = $("#input").val();
+                imprimir(value);
+            });
+        </script>
+
+
+    </body>
+</html>

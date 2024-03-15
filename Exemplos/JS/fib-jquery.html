@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+
+        Insira o valor de N: <input type="text" id="input" />
+        <button id="btn-1">Enviar</button>
+
+        <div id="meu-div">
+
+        </div>
+
+
+        <script>
+            CACHE = [1, 1];
+
+            function fib(x) {
+
+                if (CACHE.length > x) {
+                    return CACHE[x];
+                }
+                
+                if (x==0 || x==1) {
+                    return 1;
+                } else {
+                    var value = fib(x-1)+fib(x-2);
+                    CACHE[x] = value;
+                    return value;
+                }
+            }
+
+            function imprimir(n) {
+                var ul = document.createElement("ul");
+
+                for (var i=0; i<n+1; i+=1) {
+                    var f = fib(i);
+
+                    var li = document.createElement("li");
+                    li.innerHTML = "fib(" + i + ") = " + f;
+                    ul.appendChild(li);
+                }
+
+                var div = document.getElementById("meu-div");
+                div.appendChild(ul);
+            }
+
+            var btn = document.getElementById("btn-1");
+            btn.addEventListener('click', function() {
+
+                var div = document.getElementById("meu-div");
+                div.innerHTML = "";
+
+                var value = document.getElementById("input").value;
+                imprimir(parseInt(value));
+
+            });
+
+
+        </script>
+
+
+    </body>
+</html>
