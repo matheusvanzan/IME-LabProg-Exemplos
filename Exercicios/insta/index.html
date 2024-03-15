@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+
+            /* header */
+            div {
+                /* border: 1px solid red; */
+            }
+
+            #header {
+                width: 100%;
+            }
+
+            #header, #logo {
+                float: left;
+            }
+
+            #botoes {
+                float: right;
+            }
+
+            div#logo {
+                width: 100px;
+            }
+            
+            img {
+                width: 100%;
+            }
+
+            #botoes img {
+                width: 20px;
+            }
+
+            /* stories */
+            div#stories-wrapper {
+                /* border: 1px solid green; */
+                float: left;
+
+                overflow-x: scroll;
+                width: 100%;
+                
+            }
+
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            #stories-wrapper::-webkit-scrollbar {
+            display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            #stories-wrapper {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            }
+
+            div#stories {
+                /* border: 1px solid red; */
+                float: left;
+                
+                width: 1000px;
+                
+            }
+
+            div.story {
+                /* border: 1px solid green; */
+                float: left;
+                width: 40px;
+                padding: 5px;
+            }
+
+            div.story-user {
+                text-align: center;
+            }
+
+            div.story-img img {
+                /* border: 3px solid green; */
+                border-radius: 50%;
+            }
+
+            /* posts */
+            #post-wrapper {
+                /* border: 1px solid red; */
+                float: left;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            div.post {
+                margin: 0;
+                padding: 0;
+            }
+
+            .post-header {
+                /* border: 1px solid red; */
+                padding: 0;
+                margin: 10px;
+            }
+
+            .post-header img {
+                width: 20px;
+                height: 20px;
+                float: left;
+            }
+
+            .post-user {
+                /* border: 1px solid green; */
+                float: left;
+                height: 20px;
+                margin: 0;
+            }
+
+            .post-content {
+                padding: 0;
+                margin: 0;
+            }
+
+            .post-content img {
+                padding: 0;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div id="header">
+            <div id="logo">
+                <img src="logo-insta.webp" />
+            </div>
+            <div id="botoes">
+                <img src="heart.png" />
+                <img src="share.png" />
+                <img src="search.png" />
+            </div>
+        </div>
+
+        <div id="stories-wrapper">
+            <div id="stories">
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user1
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user2
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+                <div class="story">
+                    <div class="story-img">
+                        <img src="profile.png">
+                    </div>
+                    <div class="story-user">
+                        user3
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="post-wrapper">
+            <div class="post">
+                <div class="post-header">
+                    <img src="profile.png">
+                    <span class="post-user">user1</span>
+                </div>
+                <div class="post-content">
+                    <img src="css.jpg">
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
