@@ -7,8 +7,8 @@
 <body>
 <h1>Database Project</h1>
 <br/>
-Servlet 1 - <a href="servlet1">Criar registro</a>
+Servlet 1 - <a href="/create">Criar registro</a>
 <br>
-Servlet 2 - <a href="servlet2">Ver registros</a>
+Servlet 2 - <a href="/list">Ver registros</a>
 </body>
 </html>

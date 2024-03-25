@@ -3,17 +3,18 @@ package com.labprog.entities;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name = "pessoa", schema = "labprog3", catalog = "")
 public class Pessoa {
-    @Basic
-    @Column(name = "nome")
-    private String nome;
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "email")
     private String email;
+    @Basic
+    @Column(name = "nome")
+    private String nome;
     @Basic
     @Column(name = "cpf")
     private String cpf;
@@ -71,8 +72,24 @@ public class Pessoa {
         return datanascimento;
     }
 
-    public void setDatanascimento(Date datanascimento) {
+    public void setDatanascimento(java.sql.Date datanascimento) {
         this.datanascimento = datanascimento;
+    }
+
+    public void setDatanascimento(java.util.Date datanascimento) {
+        java.sql.Date dtBanco = new java.sql.Date(datanascimento.getTime());
+        this.datanascimento = dtBanco;
+    }
+
+    public void setDatanascimento(String datanascimento) {
+        java.util.Date dt = null;
+        try {
+            dt = new SimpleDateFormat("yyyy-MM-dd").parse(datanascimento);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        java.sql.Date dtBanco = new java.sql.Date(dt.getTime());
+        this.datanascimento = dtBanco;
     }
 
     @Override
@@ -103,4 +120,6 @@ public class Pessoa {
         result = 31 * result + (datanascimento != null ? datanascimento.hashCode() : 0);
         return result;
     }
+
+
 }

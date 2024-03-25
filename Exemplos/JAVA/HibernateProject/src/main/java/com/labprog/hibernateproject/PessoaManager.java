@@ -1,55 +1,47 @@
 package com.labprog.hibernateproject;
 
 import com.labprog.entities.Pessoa;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class PessoaManager {
 
-    public Pessoa create(String nome, String email, String cpf, String tel, String sexo, String dt_) {
-
-        Pessoa rp = null;
-
+    private EntityManager getEntityManager() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
         EntityManager manager = factory.createEntityManager();
-        EntityTransaction transaction = manager.getTransaction();
-
-        try {
-            Pessoa p1 = new Pessoa();
-            p1.setEmail(email);
-            p1.setNome(nome);
-            p1.setCpf(cpf);
-            p1.setTelefone(tel);
-            p1.setSexo(sexo);
-
-            java.util.Date dt = new SimpleDateFormat("yyyy-MM-dd").parse(dt_);
-            java.sql.Date dtBanco = new java.sql.Date(dt.getTime());
-            p1.setDatanascimento(dtBanco);
-
-            transaction.begin();
-            manager.persist(p1);
-            transaction.commit();
-
-            rp = p1;
-
-        } catch (ParseException e) {
-            throw new RuntimeException(e);
-        } finally {
-            if (transaction.isActive()) {
-                transaction.rollback();
-            }
-            manager.close();
-            factory.close();
-        }
-
-        return rp;
-
+        return manager;
     }
 
+    public Pessoa create(String nome, String email, String cpf, String tel, String sexo, String dt_) {
+
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+
+        Pessoa p1 = new Pessoa();
+        p1.setEmail(email);
+        p1.setNome(nome);
+
+        em.persist(p1);
+        em.getTransaction().commit();
+
+        return p1;
+    }
+
+    public List<Pessoa> getAll() {
+        EntityManager em = getEntityManager();
+        em.getTransaction().begin();
+        List<Pessoa> pessoaList = em.createQuery("from Pessoa as pessoa").getResultList();
+        return pessoaList;
+    }
+
+    public Pessoa getByEmail(String email) {
+        EntityManager em = getEntityManager();
+        Pessoa p = em.find(Pessoa.class, email);
+        em.detach(p);
+        return p;
+    }
 
 }

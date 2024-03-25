@@ -1,16 +1,13 @@
 package com.labprog.hibernateproject;
 
 import java.io.*;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import com.labprog.entities.*;
-import jakarta.persistence.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "Servlet1", value = "/servlet1")
-public class Servlet1 extends HttpServlet {
+@WebServlet(name = "CreateServlet", value = "/create")
+public class CreateServlet extends HttpServlet {
 
     public void init() {}
 
@@ -20,9 +17,9 @@ public class Servlet1 extends HttpServlet {
         PessoaManager objects = new PessoaManager();
         Pessoa p = objects.create(
                 "Matheus",
-                "vanzan3@eb.mil.br",
-                "123",
-                "123",
+                "vanzan.matheus@eb.mil.br",
+                "123456789",
+                "123456789",
                 "M",
                 "1992-12-12"
         );

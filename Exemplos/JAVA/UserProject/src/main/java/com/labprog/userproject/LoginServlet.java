@@ -42,7 +42,8 @@ public class LoginServlet extends HttpServlet {
 
 
         try {
-            response.sendRedirect("home.jsp");
+//            response.sendRedirect("home.jsp");
+            response.sendRedirect("/home");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
