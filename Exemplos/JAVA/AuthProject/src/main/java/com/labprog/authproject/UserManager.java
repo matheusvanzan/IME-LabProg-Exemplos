@@ -24,7 +24,8 @@ public class UserManager {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
 
-        Query query = session.createQuery("FROM User WHERE username= :username").setParameter("username", username);
+        Query query = session.createQuery("FROM User WHERE username= :username")
+                .setParameter("username", username);
         User user = (User) query.getSingleResult();
         t.commit();
 
