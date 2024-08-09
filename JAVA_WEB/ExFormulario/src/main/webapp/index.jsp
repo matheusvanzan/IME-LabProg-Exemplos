@@ -1,0 +1,149 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crie um Formulário de Pesquisa usando HTML</title>
+
+    <style>
+
+        body {
+            background-color: green;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            font-size: 15px;
+        }
+
+        form {
+            background-color: white;
+            width: 60%;
+
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        label.block {
+            display: block;
+            margin: 2px 0;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: calc(100% - 2px);
+            height: 2rem;
+            margin: 0;
+            padding: 0;
+
+            border-width: 1px;
+        }
+
+        textarea {
+            width: calc(100% - 2px);
+            height: 50px;
+            height: 10rem;
+            border: 1px solid black;
+        }
+
+        button {
+            width: 100%;
+            height: 2rem;
+
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<form method="POST" action="/servlet2">
+
+    <label class="block" for="name" id="label-name">Nome</label>
+    <input type="text" name="name" id="name" placeholder="Digite seu nome" />
+
+    <br><br>
+    <label class="block" for="email" id="label-email">Email</label>
+    <input type="email" name="email" id="email" placeholder="Digite seu email" />
+    <br><br>
+    <label class="block" for="age" id="label-age">Idade</label>
+    <input type="text" id="age" name="age" placeholder="Digite sua idade" />
+    <br><br>
+    <label class="block" for="role" id="label-role">Qual opção descreve melhor você?</label>
+
+    <!-- Opções Dropdown -->
+    <select name="role" id="role">
+        <option value="student">Estudante</option>
+        <option value="intern">Estagiário</option>
+        <option value="professional">Profissional</option>
+        <option value="other">Outro</option>
+    </select>
+    <br><br>
+    <label>Recomendaria este site a um amigo?</label>
+    <!-- Input Tipo Botão de Rádio -->
+
+    <input type="radio" id="recommend-1" name="recommend" value="sim">
+    <label for="recommend-1">Sim</label>
+
+    <input type="radio" id="recommend-2" name="recommend" value="nao">
+    <label for="recommend-2" >Não</label>
+
+    <input type="radio" id="recommend-3" name="recommend" value="talvez">
+    <label for="recommend-3">Talvez</label>
+
+    <br><br>
+    <label>Línguagens e Frameworks conhecidos <small>(Marque todos que se aplicam)</small></label>
+    <br>
+    <!-- Input Tipo Checkbox -->
+    <label for="inp-1">
+        <input type="checkbox" id="inp-1" name="languages" value="c">C
+    </label>
+    <br>
+    <label for="inp-2">
+        <input type="checkbox" id="inp-2" name="languages" value="c++">C++
+    </label>
+    <br>
+    <label for="inp-3">
+        <input type="checkbox" id="inp-3" name="languages" value="c#">C#
+    </label>
+    <br>
+    <label for="inp-4">
+        <input type="checkbox" id="inp-4" name="languages" value="java">Java
+    </label>
+    <br>
+    <label for="inp-5">
+        <input type="checkbox" id="inp-5" name="languages" value="python">Python
+    </label>
+    <br>
+    <label for="inp-6">
+        <input type="checkbox" id="inp-6" name="languages" value="javascript">JavaScript
+    </label>
+    <br>
+    <label for="inp-7">
+        <input type="checkbox" id="inp-7" name="languages" value="react">React
+    </label>
+    <br>
+    <label for="inp-8">
+        <input type="checkbox" id="inp-8" name="languages" value="angular">Angular
+    </label>
+    <br>
+    <label for="inp-9">
+        <input type="checkbox" id="inp-9" name="languages" value="django">Django
+    </label>
+    <br>
+    <label for="inp-10">
+        <input type="checkbox" id="inp-10" name="languages" value="spring">Spring
+    </label>
+    <br><br>
+
+    <label class="block" for="comment">Comentários ou sugestões</label>
+    <textarea name="comment" id="comment" placeholder="Digite seu comentário aqui"></textarea>
+    <br><br>
+    <button type="submit" value="submit">Enviar</button>
+</form>
+</body>
+</html>
