@@ -16,16 +16,27 @@ public class Array {
             System.out.println(cars[i]);
         }
 
-        for (String i : cars) {
-            System.out.println(i);
+        for (String c : cars) {
+            System.out.println(c);
         }
 
-        String[] cars2;
-
-
-
-        System.out.println(Arrays.toString(cars));
+        // Cópia
+        String[] cars2 = copyArray(cars);
+        System.out.println("cars  = " + Arrays.toString(cars));
+        System.out.println("cars2 = " + Arrays.toString(cars2));
         
+    }
+
+
+    public static String[] copyArray(String[] arrayOriginal) {
+
+        String[] arrayCopy = new String[arrayOriginal.length];
+
+        for (int i = 0; i < arrayOriginal.length; i++) {
+            arrayCopy[i] = arrayOriginal[i];
+        }
+        
+        return arrayCopy;
     }
 
 
