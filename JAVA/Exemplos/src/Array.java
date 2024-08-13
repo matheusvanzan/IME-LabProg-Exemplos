@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Array {
@@ -22,8 +23,11 @@ public class Array {
 
         // Cópia
         String[] cars2 = copyArray(cars);
+        String[] cars3 = copyArray(cars);
+
         System.out.println("cars  = " + Arrays.toString(cars));
         System.out.println("cars2 = " + Arrays.toString(cars2));
+        System.out.println("cars3 = " + Arrays.toString(cars3));
         
     }
 
@@ -35,7 +39,20 @@ public class Array {
         for (int i = 0; i < arrayOriginal.length; i++) {
             arrayCopy[i] = arrayOriginal[i];
         }
+
+        return arrayCopy;
+    }
+
+    public static String[] copyArray2(String[] arrayOriginal) {
+
+        ArrayList<String> listCopy = new ArrayList<String>();
+
+        for (String c : arrayOriginal) {
+            listCopy.add(c);
+        }
         
+        String[] arrayCopy = new String[listCopy.size()];
+        listCopy.toArray(arrayCopy);
         return arrayCopy;
     }
 
