@@ -1,5 +1,13 @@
 # Exemplos de Java
 
+## Compilando e executando um projeto
+
+```
+$ javac src/*.java -d bin/
+$ java -cp bin/ ExemploClass
+
+```
+
 ## Criar uma cópia de um Array
 
 ```
