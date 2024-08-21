@@ -19,7 +19,7 @@ public class UsersApplication {
 }
 
 @RestController
-class FatorialController {
+class UsersController {
 
     @GetMapping("/users") // http://localhost:8080/users
     public ApiResponse<ArrayList<User>> usersAll() {
