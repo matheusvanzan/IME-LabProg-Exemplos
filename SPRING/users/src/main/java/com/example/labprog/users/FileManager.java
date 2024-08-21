@@ -9,10 +9,6 @@ import java.util.ArrayList;
 
 public class FileManager {
 
-    public static void main(String[] args) {
-
-    }
-
     public static ArrayList<String> readFromFile(String fileName) {
         ArrayList<String> lines = new ArrayList<String>();
 

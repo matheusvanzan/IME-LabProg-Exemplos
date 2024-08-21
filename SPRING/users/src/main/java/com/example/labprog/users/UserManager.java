@@ -12,10 +12,11 @@ public class UserManager {
         ArrayList<String> lines = FileManager.readFromFile("files/users.csv");
         users = new ArrayList<>();
         
-        for(String line: lines) {
-            System.out.println(line);
+        for(int i=1; i<lines.size(); i++) {
 
+            String line = lines.get(i);
             String[] values = line.split(",");
+            
             User user = new User(
                 Integer.parseInt(values[0]),
                 values[1],
@@ -25,7 +26,6 @@ public class UserManager {
             );
             users.add(user);
         }
-
     }
 
     public ArrayList<User> getAll() {
