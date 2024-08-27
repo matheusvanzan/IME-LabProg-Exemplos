@@ -24,20 +24,18 @@ public class MainController {
         n.setFirstName(name);
         n.setEmail(email);
         userRepository.save(n);
-
         return "Saved";
     }
 
+    // R - READ - GET
     @GetMapping(path="/all")
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
-
-    // R - READ - GET
-    @GetMapping(path="/search/{name}")
-    public Iterable<User> getUserByName(@PathVariable("name") String name) {
-        
-        return userRepository.findByFirstName(name);
+    
+    @GetMapping(path="/search/{username}")
+    public Iterable<User> getUserByUsername(@PathVariable("username") String username) {        
+        return userRepository.findByUsername(username);
     }
 
     // U - UPDATE - PUT
@@ -45,6 +43,6 @@ public class MainController {
 
 
     // D - DELETE - DELETE
-
+    
 
 }
