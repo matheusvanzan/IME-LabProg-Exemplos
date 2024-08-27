@@ -1,6 +1,7 @@
 package com.example.labprog.crud;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,13 +19,14 @@ public class MainController {
 
     // C - CREATE - POST
     @PostMapping(path="/create")
-    public String addNewUser (@RequestParam String name, @RequestParam String email) {
+    public ResponseEntity<String> addNewUser (@RequestParam String name, @RequestParam String email) {
 
         User n = new User();
         n.setFirstName(name);
         n.setEmail(email);
         userRepository.save(n);
-        return "Saved";
+        
+        return ResponseEntity.ok("Sucess");
     }
 
     // R - READ - GET
