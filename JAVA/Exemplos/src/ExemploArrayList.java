@@ -1,26 +1,20 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class ExemploArrayList {
 
     public static void main(String[] args) {
-
-        Scanner input = new Scanner( System.in );
+        
         ArrayList<Integer> numeros = new ArrayList<Integer>();
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        
+        System.out.println(numeros.size()); // 3
+        System.out.println(numeros); // [1, 2, 3]
 
-        Boolean stopExecution = false;
-        while (!stopExecution) {
-            System.out.println("Insira um número. (Digite 0 para sair)");
+        numeros.remove(2); // remove o indice 2
 
-            int n = input.nextInt();
-            numeros.add(n);
-
-            System.out.println("Lista atualizada: " + numeros.toString());
-
-            if (n == 0) { stopExecution = true ;}
-        }
-
-        input.close();
+        System.out.println(numeros.size()); // 2
+        System.out.println(numeros); // [1, 2]
     }
-
 }
