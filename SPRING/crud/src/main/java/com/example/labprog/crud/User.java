@@ -21,7 +21,21 @@ public class User {
     private LocalDateTime lastLogin;
     private boolean isAdmin;
     private boolean isActive;
+    
 
+    public User() {
+    }
+    
+    public User(String username, String email, String firstName, String lastName, LocalDateTime lastLogin,
+            boolean isAdmin, boolean isActive) {
+        this.username = username;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.lastLogin = lastLogin;
+        this.isAdmin = isAdmin;
+        this.isActive = isActive;
+    }
     public Integer getId() {
         return id;
     }

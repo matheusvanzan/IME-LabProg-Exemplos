@@ -10,6 +10,9 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     // findAll() e save() não precisam ser declarados
 
-    Iterable<User> findByFirstName(String name);
+    Integer countDistinctByUsername(String username);
 
+    Iterable<User> findByUsername(String username);
+
+    Iterable<User> findByFirstName(String firstName);
 }
