@@ -7,7 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity // Indica ao Hibernate para criar uma tabela
 public class User {
 
     @Id
@@ -23,8 +23,7 @@ public class User {
     private boolean isActive;
     
 
-    public User() {
-    }
+    public User() { }
     
     public User(String username, String email, String firstName, String lastName, LocalDateTime lastLogin,
             boolean isAdmin, boolean isActive) {

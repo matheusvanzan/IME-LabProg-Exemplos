@@ -8,10 +8,10 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-    // findAll() e save() não precisam ser declarados
+    // Alguns métodos são declarados automaticamente
+    // Ex: findAll(), findById() e save() não precisam ser declarados
 
     Integer countDistinctByUsername(String username);
-    
     Iterable<User> findByUsername(String username);
     Iterable<User> findByFirstName(String firstName);
 }
