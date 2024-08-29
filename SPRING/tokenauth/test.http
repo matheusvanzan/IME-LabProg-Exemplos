@@ -1,0 +1,24 @@
+@baseUrl = http://localhost:8080/api
+
+### Rquest 1
+GET {{baseUrl}}/
+
+### Request 2
+GET {{baseUrl}}/home
+
+
+
+
+### Validate Token
+POST {{baseUrl}}/login
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="username"
+
+matheusvanzan
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="password"
+
+123456
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
