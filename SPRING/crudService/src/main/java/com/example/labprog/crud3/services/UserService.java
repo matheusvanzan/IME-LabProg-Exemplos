@@ -4,10 +4,13 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.example.labprog.crud3.entities.User;
 import com.example.labprog.crud3.repositories.UserRepository;
 
 
+@Service
 public class UserService {
 
     UserRepository userRepository;

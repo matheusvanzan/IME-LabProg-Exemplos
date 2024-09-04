@@ -10,6 +10,7 @@ import jakarta.annotation.PostConstruct;
 
 import java.util.HashMap;
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -47,7 +48,7 @@ public class UserController {
 
     // R - READ - GET
     @GetMapping(path="/all")
-    public Iterable<User> getAllUsers() {
+    public List<User> getAllUsers() {
         return userService.findAll();
     }
     

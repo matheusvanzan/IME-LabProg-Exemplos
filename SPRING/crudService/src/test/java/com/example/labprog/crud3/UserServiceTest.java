@@ -1,22 +1,21 @@
 package com.example.labprog.crud3;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-import java.util.Optional;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.expression.spel.support.ReflectivePropertyAccessor.OptimalPropertyAccessor;
 
 import com.example.labprog.crud3.entities.User;
 import com.example.labprog.crud3.repositories.UserRepository;
 import com.example.labprog.crud3.services.UserService;
-import com.jayway.jsonpath.Option;
 
 public class UserServiceTest {
 
@@ -82,7 +81,7 @@ public class UserServiceTest {
         when(userRepository.findByUsername(mockUsername)).thenReturn(userNotFound);
 
         Optional<User> foundOptUser = userService.findByUsername(mockUsername);
-        
+
         assertFalse(foundOptUser.isPresent());
         assertEquals(userNotFound.getClass(), foundOptUser.getClass());
     }
