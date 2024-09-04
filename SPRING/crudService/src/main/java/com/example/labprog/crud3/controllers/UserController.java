@@ -9,6 +9,7 @@ import com.example.labprog.crud3.services.UserService;
 import jakarta.annotation.PostConstruct;
 
 import java.util.HashMap;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -30,11 +31,16 @@ public class UserController {
     private UserService userService;
 
     // public UserController() {
-    //     Aqui o userRepository ainda não está disponível.
+    //     Aqui o userRepository ainda não está disponível
+    //     pois o userController ainda não foi instanciado.
     // }
 
     @PostConstruct
     public void initialize() {
+        // Aqui o nome do método poderia ser qualquer um. 
+        // O importante é o @PostConstruct, que faz ele ser 
+        // chamado após a criação do objeto de UserController. 
+
         System.out.println("PostConstruct initialize");
         userService = new UserService(userRepository);
     }
@@ -46,7 +52,7 @@ public class UserController {
     }
     
     @GetMapping(path="/search/{username}")
-    public User searchUserByUsername(@PathVariable("username") String username) {        
+    public Optional<User> searchUserByUsername(@PathVariable("username") String username) {        
         return userService.findByUsername(username);
     }
 
