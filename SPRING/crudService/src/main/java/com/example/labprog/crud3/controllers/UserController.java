@@ -35,6 +35,7 @@ public class UserController {
 
     @PostConstruct
     public void initialize() {
+        System.out.println("PostConstruct initialize");
         userService = new UserService(userRepository);
     }
 
