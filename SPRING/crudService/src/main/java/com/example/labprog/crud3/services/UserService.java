@@ -33,9 +33,9 @@ public class UserService {
         // - conferir username duplicado
 
         User user = new User();
-        // user.setUsername(username);
-        // user.setPassword(password);
-        // user.setCreatedAt(LocalDateTime.now());
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setCreatedAt(LocalDateTime.now());
 
         return userRepository.save(user);
     }
