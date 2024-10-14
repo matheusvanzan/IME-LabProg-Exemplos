@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+
+    <body>
+
+        <div>
+            Entre com o valor de N <input id="n-id" type="text" vlaue="" />
+            <br>
+            <button id="button">Calcular</button>
+        </div>
+
+        <br><br>
+
+        <div id="div-1">
+        </div>
+
+        <script>
+
+            CACHE = [1, 1];
+
+            function fib(n) {
+                if (CACHE.length > n) {
+                    return CACHE[n];
+                }
+
+                var returnValue = fib(n-1) + fib(n-2);
+                CACHE[n] = returnValue
+                return returnValue;
+            }
+
+            var btnElement = document.getElementById("button");
+            btnElement.addEventListener('click', function () {
+                
+                var inputElement = document.getElementById("n-id");
+                var n = inputElement.value;
+                console.log(n);
+
+                var fibN = fib(n);
+                var div1 = document.getElementById("div-1");
+                console.log(div1.innerHTML);
+                // div1.innerHTML = `O valor é ${fibN}`;
+                div1.innerHTML = 'O valor é ' + fibN;
+            });            
+
+            
+        </script>
+    </body>
+</html>
