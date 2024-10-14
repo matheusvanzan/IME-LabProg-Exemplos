@@ -5,6 +5,7 @@ function clear() {
     resultDiv.innerHTML = "";  // Clear any existing content
 }
 
+// Function with vanilla JS
 document.getElementById("load-js").addEventListener("click", function() {
     clear();
     console.log("Loading data using vanilla JS");
@@ -17,6 +18,7 @@ document.getElementById("load-js").addEventListener("click", function() {
     .catch(error => console.error('Error:', error));
 });
 
+// Function with JQuery
 $("#load-jq").click(function() {
     clear();
     console.log("Loading data using JQuery");
@@ -34,7 +36,9 @@ $("#load-jq").click(function() {
     });
 });
 
+$('#clear').click(clear);
 
+// Functions to add elements
 function createUserCards(users) {
     users.forEach(function(user) {
         // Create a new div for the user
