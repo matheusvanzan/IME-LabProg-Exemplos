@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+@CrossOrigin(origins = "http://localhost")
 @RestController
 @RequestMapping(path="/users") // Todas as URL iniciam com /users
 public class UserController {
@@ -62,6 +63,8 @@ public class UserController {
     public HashMap<String, Object> create(
         @RequestParam(defaultValue = "") String username, 
         @RequestParam(defaultValue = "") String password ) {
+        
+        System.out.println("Creating new user: " + username);
 
         String returnStatus = "";
         User newUser = null;
@@ -76,6 +79,8 @@ public class UserController {
         HashMap<String, Object> response = new HashMap<>();
         response.put("status", returnStatus);
         response.put("user", newUser);
+
+        System.out.println("User created!");
         return response;
     }
     
