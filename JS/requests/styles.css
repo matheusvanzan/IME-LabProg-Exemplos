@@ -1,0 +1,16 @@
+.user {
+    /* border: 1px solid red; */
+
+    float: left;
+    width: 30%;
+    padding: 1%;
+}
+
+.user img {
+    display: block;
+    margin: auto;
+}
+
+button {
+    margin: 10px 0;
+}
