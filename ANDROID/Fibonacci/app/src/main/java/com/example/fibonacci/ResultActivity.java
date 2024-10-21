@@ -35,17 +35,25 @@ public class ResultActivity extends AppCompatActivity {
             return insets;
         });
 
-        Integer defaultValue = 0;
-
         Intent intent = getIntent();
+        Integer defaultValue = 0;
         Integer number = intent.getIntExtra("number", defaultValue);
 
+        Integer result = fib(number);
         TextView resultText = (TextView) findViewById(R.id.resultText);
-        resultText.setText(number.toString());
+        resultText.setText(result.toString());
     }
 
     public void btnVoltar(View v) {
         finish();
+    }
+
+    public Integer fib(Integer n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return fib(n-1) + fib(n-2);
+        }
     }
 
 }
