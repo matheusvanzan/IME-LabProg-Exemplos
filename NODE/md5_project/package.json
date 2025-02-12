@@ -1,0 +1,13 @@
+{
+  "type": "module",
+
+  "scripts": {
+    "main": "node lib/main.js"
+  },
+  
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
+}
+
+

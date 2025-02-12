@@ -1,11 +1,11 @@
-const readline = require('readline');
+import readline from 'node:readline';
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
-rl.question('Please enter your name: ', (answer) => {
-  console.log(`Hello, ${answer}!`);
+rl.question(`What's your name?`, name => {
+  console.log(`Hi ${name}!`);
   rl.close();
 });
