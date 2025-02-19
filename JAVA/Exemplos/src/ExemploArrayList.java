@@ -16,5 +16,9 @@ public class ExemploArrayList {
 
         System.out.println(numeros.size()); // 2
         System.out.println(numeros); // [1, 2]
+
+        for (Integer item: numeros) {
+            System.out.println(item);
+        }
     }
 }

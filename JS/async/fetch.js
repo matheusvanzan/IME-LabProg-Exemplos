@@ -47,17 +47,26 @@
 
 // ---
 
-fetch('https://jsonplaceholder.typicode.com/users/1')
-    .then(response => {
-        if (!response.ok) {
-            console.error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(user => {
-        console.log('User Data Retrieved', user);
-        return user;
-    })
-    .catch(error => {
-        console.error('Error fetching user data:', error);
-    });
+// fetch('https://jsonplaceholder.typicode.com/users/1')
+//     .then(response => {
+//         if (!response.ok) {
+//             console.error(`HTTP error! Status: ${response.status}`);
+//         }
+//         return response.json();
+//     })
+//     .then(user => {
+//         console.log('User Data Retrieved', user);
+//         return user;
+//     })
+//     .catch(error => {
+//         console.error('Error fetching user data:', error);
+//     });
+
+// ---
+
+var fetchData = async () => {
+    var response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    var data = await response.json();
+    console.log(data); // {id: 1, name: 'Leanne Graham', ....}
+}
+fetchData();
