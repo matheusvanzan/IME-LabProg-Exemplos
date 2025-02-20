@@ -1,12 +1,15 @@
 # 📚 IME - Laboratório de Programação
 
-Bem-vindo ao repositório da disciplina **Laboratório de Programação** do **IME**!  
+Bem-vindo ao repositório das disciplinas **Laboratório de Programação II e III** do **IME**!
+
+Essas disciplinas abordas os principais conceitos e tecnologias do Desenvolvimento Web e Mobile.
+
 Aqui você encontrará **códigos-fonte**, **exemplos práticos** e **exercícios** utilizados durante as aulas.  
 
 ## 📂 Estrutura do Repositório
 
 ```
-📦 IME-LabProg-Exemplos
+IME-LabProg-Exemplos
 ├── 📁 ANDROID        → Exemplos de desenvolvimento para Android
 ├── 📁 HTML e CSS     → Exemplos de desenvolvimento web com HTML e CSS
 ├── 📁 JAVA           → Exemplos de programação em Java
@@ -39,12 +42,3 @@ Aqui você encontrará **códigos-fonte**, **exemplos práticos** e **exercício
 ## 🔧 Pré-requisitos  
 
 Os pré-requisitos variam de acordo com a tecnologia utilizada em cada diretório. Para saber quais ferramentas ou configurações são necessárias, consulte o **README** específico dentro de cada pasta correspondente.  
-
-## 🤝 Contribuições  
-
-Caso encontre algum erro ou tenha sugestões de melhorias, sinta-se à vontade para:  
-
-1. Abrir uma **issue** no GitHub.  
-2. Enviar um **pull request** com sua sugestão de melhoria.  
-
-📧 **Dúvidas?** Entre em contato pelo fórum da disciplina ou diretamente com o professor.  
