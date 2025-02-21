@@ -10,14 +10,15 @@ Aqui você encontrará **códigos-fonte**, **exemplos práticos** e **exercício
 
 ```
 IME-LabProg-Exemplos
-├── 📁 ANDROID        → Exemplos de desenvolvimento para Android
-├── 📁 HTML e CSS     → Exemplos de desenvolvimento web com HTML e CSS
-├── 📁 JAVA           → Exemplos de programação em Java
-├── 📁 JS             → Exemplos de programação em JavaScript
-├── 📁 REACT          → Exemplos de desenvolvimento com React
-├── 📁 SERVLET        → Exemplos de desenvolvimento com Servlets Java
-├── 📁 SPRING         → Exemplos de desenvolvimento com Framework Spring Boot
-├── 📁 _aulas         → Códigos utilizados em exercícios feitos em sala de aula
+├── 📁 1 - Exercícios em Sala        → Códigos de exercícios feitos em sala de aula
+├── 📁 2 - Java                      → Exemplos de Java
+├── 📁 2.1 - Java Servlets           → Exemplos de Java Servlets
+├── 📁 2.2 - Java SpringBoot         → Exemplos do Framework SpringBoot
+├── 📁 3 - HTML e CSS                → Exemplos de HTML e CSS
+├── 📁 4 - JavaScript                → Exemplos de JavaScript
+├── 📁 4.1 - TypeScript              → Exemplos de TypeScript
+├── 📁 5 - Android                   → Exemplos de Android
+├── 📁 6 - React Native              → Exemplos de React Native
 ```
 
 ## 🚀 Como Utilizar este Repositório
