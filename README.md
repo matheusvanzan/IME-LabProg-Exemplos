@@ -1,10 +1,8 @@
 # 📚 IME - Laboratório de Programação
 
-Bem-vindo ao repositório das disciplinas **Laboratório de Programação II e III** do **IME**!
+Bem-vindo ao repositório das disciplinas **Laboratório de Programação II e III** do **Instituto Militar de Engenharia**.
 
-Essas disciplinas abordas os principais conceitos e tecnologias do Desenvolvimento Web e Mobile.
-
-Aqui você encontrará **códigos-fonte**, **exemplos práticos** e **exercícios** utilizados durante as aulas.  
+Essas disciplinas abordam os principais conceitos e tecnologias do **Desenvolvimento Web** e **Mobile**. Aqui você encontrará **códigos-fonte**, **exemplos práticos** e **exercícios** utilizados no material didático e durante as aulas do curso de graduação.  
 
 ## 📂 Estrutura do Repositório
 
@@ -23,22 +21,25 @@ IME-LabProg-Exemplos
 
 ## 🚀 Como Utilizar este Repositório
 
-1. **Para quem ainda não tem o repositório clonado:**  
+1. **Para quem ainda não tem o repositório**  
+
    Clone o repositório para o seu computador:  
+
    ```sh
    git clone https://github.com/matheusvanzan/IME-LabProg-Exemplos.git
    ```
 
-2. **Para quem já tem o repositório clonado e deseja atualizá-lo:**  
+2. **Para quem já tem o repositório clonado e deseja atualizá-lo**  
+
    Navegue até a pasta do repositório e execute:  
+
    ```sh
    git pull origin main
    ```
    Isso atualizará o repositório local com as últimas mudanças do repositório remoto.
 
-3. Acesse os diretórios conforme a tecnologia ou o contexto desejado.  
 
-4. Para rodar os códigos, verifique os **pré-requisitos** abaixo.  
+3. Acesse os diretórios conforme a tecnologia ou o contexto desejado.
 
 ## 🔧 Pré-requisitos  
 
