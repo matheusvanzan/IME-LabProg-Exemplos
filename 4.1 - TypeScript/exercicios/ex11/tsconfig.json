@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+      "target": "es2016",   // versão do JavaScript de saída
+      "module": "esnext",   // sistema de módulos (require ou import/export)
+      "strict": true,       // habilita todas as checagens de tipo        
+      "rootDir": "src",     // arquivos TypeScript para conversão
+      "outDir": "dist"      // arquivos JavaScript transpilados
+  },
+  "include": ["src"]        // pastas para incluir
+}
