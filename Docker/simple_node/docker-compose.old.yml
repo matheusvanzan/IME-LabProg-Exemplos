@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:  
+
+  node-app:    
+    # image: node:latest
+    build: .
+    working_dir: /app    
+    volumes:      
+      - ./code:/app    
+    command: ["node", "script.js"]

@@ -1,0 +1,41 @@
+# Usa a imagem oficial do OpenJDK 21
+FROM openjdk:21-jdk-slim
+
+# Instala o Gradle diretamente no container
+# RUN apt update && apt install -y gradle
+# Instala dependências para o Gradle
+RUN apt update && apt install -y curl unzip
+
+# Instala o Gradle 8.5
+RUN curl -fsSL https://services.gradle.org/distributions/gradle-8.5-bin.zip -o gradle.zip \
+    && unzip gradle.zip -d /opt/ \
+    && rm gradle.zip \
+    && ln -s /opt/gradle-8.5/bin/gradle /usr/local/bin/gradle
+
+# Cria um usuário não-root chamado "user"
+RUN useradd -m user
+
+# Define o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copia o restante do código do projeto
+COPY code/ .
+
+# Muda o dono de todos os arquivos para o usuário "user"
+RUN chown -R user:user /app
+
+# Alterna para o usuário "user"
+USER user
+
+# Converte todos os arquivos do projeto para formato Unix (evita erro ^M)
+RUN find . -type f -exec sed -i 's/\r$//' {} +
+
+# Constrói o projeto para garantir que as dependências do Gradle estejam instaladas
+RUN gradle build
+
+# Expõe a porta 8081
+EXPOSE 8081
+
+# Comando para iniciar a aplicação
+CMD ["gradle", "bootRun"]
+# CMD ["tail", "-f", "/dev/null"]

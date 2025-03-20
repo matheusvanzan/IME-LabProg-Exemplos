@@ -1,0 +1,1 @@
+console.log('Custom Hello from Docker 4');

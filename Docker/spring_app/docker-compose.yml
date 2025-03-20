@@ -1,0 +1,9 @@
+
+services:
+  spring-app:
+    build: .
+    ports:
+      - "8081:8081"
+    #environment:
+    #  - SPRING_PROFILES_ACTIVE=production
+    #restart: always

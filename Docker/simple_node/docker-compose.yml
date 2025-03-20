@@ -1,0 +1,9 @@
+
+
+services:
+  node1:
+    image: node
+    working_dir: /app
+    volumes:
+      - ./code:/app
+    command: ["node", "script.js"]
