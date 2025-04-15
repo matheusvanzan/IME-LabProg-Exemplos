@@ -17,6 +17,7 @@ IME-LabProg-Exemplos
 ├── 📁 4.1 - TypeScript              → Exemplos de TypeScript
 ├── 📁 5 - Android                   → Exemplos de Android
 ├── 📁 6 - React Native              → Exemplos de React Native
+├── 📁 7 - Docker                    → Exemplos de Docker
 ```
 
 ## 🚀 Como Utilizar este Repositório
