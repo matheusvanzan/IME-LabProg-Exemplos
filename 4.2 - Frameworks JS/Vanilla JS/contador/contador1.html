@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      font-size: 2em;
+      width: 100px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      font-size: 1.5em;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador</h1>
+  <input type="text" id="contador" value="0" readonly />
+  <br />
+  <button onclick="decrementar()">-</button>
+  <button onclick="incrementar()">+</button>
+
+  <script>
+    const input = document.getElementById('contador');
+
+    function incrementar() {
+      const valorAtual = parseInt(input.value);
+      const novoValor = valorAtual + 1;
+      console.log(`Incrementando: ${valorAtual} → ${novoValor}`);
+      input.value = novoValor;
+    }
+
+    function decrementar() {
+      const valorAtual = parseInt(input.value);
+      const novoValor = valorAtual - 1;
+      console.log(`Decrementando: ${valorAtual} → ${novoValor}`);
+      input.value = novoValor;
+    }
+  </script>
+
+</body>
+</html>

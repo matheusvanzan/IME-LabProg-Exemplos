@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador - UI Manual</title>
+</head>
+<body>
+  <h1>Contador</h1>
+  <p id="counter">0</p>
+  <button click="increment()">Incrementar</button>
+
+  <script>
+
+    const increment = () => {
+        const counter = document.getElementById('counter');
+        let num = parseInt(counter.innerText);
+        num += 1;
+        counter.innerText = num.toString();
+    }
+  </script>
+</body>
+</html>

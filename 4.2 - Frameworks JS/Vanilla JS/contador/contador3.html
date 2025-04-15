@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador com Efeito Cascata</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    input[type="text"] {
+      font-size: 2em;
+      width: 100px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      font-size: 1.5em;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #estado {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    #caixa-status {
+      width: 100px;
+      height: 100px;
+      margin: 20px auto;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-resetar {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador Reativo com Cascata</h1>
+
+  <input type="text" id="contador" readonly />
+  <br />
+
+  <button id="btn-decrementar">-</button>
+  <button id="btn-incrementar">+</button>
+  <button id="btn-resetar">Resetar</button>
+
+  <div id="estado"></div>
+  <div id="caixa-status"></div>
+
+  <script>
+    // Estado centralizado
+    const state = {
+      valor: 0
+    };
+
+    // Função que renderiza a UI com base no estado
+    function render() {
+      console.log('🔄 Renderizando UI com base no estado...');
+
+      // Atualiza o valor numérico
+      const input = document.getElementById('contador');
+      input.value = state.valor;
+
+      // Atualiza a descrição do estado
+      const estado = document.getElementById('estado');
+      if (state.valor > 0) {
+        estado.textContent = 'Valor positivo';
+      } else if (state.valor < 0) {
+        estado.textContent = 'Valor negativo';
+      } else {
+        estado.textContent = 'Valor neutro (zero)';
+      }
+
+      // Atualiza a cor da caixa
+      const caixa = document.getElementById('caixa-status');
+      if (state.valor > 0) {
+        caixa.style.backgroundColor = 'lightgreen';
+      } else if (state.valor < 0) {
+        caixa.style.backgroundColor = 'lightcoral';
+      } else {
+        caixa.style.backgroundColor = 'lightgray';
+      }
+
+      // Mostrar ou esconder botão de reset
+      const btnReset = document.getElementById('btn-resetar');
+      btnReset.style.display = state.valor !== 0 ? 'inline-block' : 'none';
+
+      // Log da cascata
+      console.log(`→ valor: ${state.valor}`);
+      console.log(`→ estado visual: ${estado.textContent}`);
+      console.log(`→ cor da caixa: ${caixa.style.backgroundColor}`);
+      console.log(`→ botão reset ${btnReset.style.display === 'none' ? 'oculto' : 'visível'}`);
+    }
+
+    // Ações
+    function incrementar() {
+      state.valor++;
+      console.log(`🟢 Incrementando para ${state.valor}`);
+      render();
+    }
+
+    function decrementar() {
+      state.valor--;
+      console.log(`🔴 Decrementando para ${state.valor}`);
+      render();
+    }
+
+    function resetar() {
+      console.log(`🟡 Resetando contador`);
+      state.valor = 0;
+      render();
+    }
+
+    // Eventos
+    document.getElementById('btn-incrementar').addEventListener('click', incrementar);
+    document.getElementById('btn-decrementar').addEventListener('click', decrementar);
+    document.getElementById('btn-resetar').addEventListener('click', resetar);
+
+    // Render inicial
+    render();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador Reativo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="text"] {
+      font-size: 2em;
+      width: 100px;
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      font-size: 1.5em;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contador Reativo</h1>
+  <input type="text" id="contador" readonly />
+  <br />
+  <button id="btn-decrementar">-</button>
+  <button id="btn-incrementar">+</button>
+
+  <script>
+    // Estado centralizado
+    const state = {
+      valor: 0
+    };
+
+    // Função que renderiza a UI com base no estado
+    function render() {
+      document.getElementById('contador').value = state.valor;
+      console.log(`Renderizando: o valor atual é ${state.valor}`);
+    }
+
+    // Eventos que modificam o estado
+    function incrementar() {
+      const valorAnterior = state.valor;
+      state.valor++;
+      console.log(`Incrementando: ${valorAnterior} → ${state.valor}`);
+      render();
+    }
+
+    function decrementar() {
+      const valorAnterior = state.valor;
+      state.valor--;
+      console.log(`Decrementando: ${valorAnterior} → ${state.valor}`);
+      render();
+    }
+
+    // Configurar eventos nos botões
+    document.getElementById('btn-incrementar').addEventListener('click', incrementar);
+    document.getElementById('btn-decrementar').addEventListener('click', decrementar);
+
+    // Render inicial
+    render();
+  </script>
+
+</body>
+</html>
