@@ -1,6 +1,0 @@
-
-services:
-  spring-app:
-    build: .
-    ports:
-      - "8083:8083"
