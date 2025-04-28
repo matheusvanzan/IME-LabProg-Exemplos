@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador - UI Manual</title>
+</head>
+<body>
+  <h1>Contador</h1>
+  <p id="counter"></p>
+  <button onclick="increment()">Incrementar</button>
+
+  <script>
+
+    const renderUI = () => {
+        console.log('Atualizando a UI...');
+        const counter = document.getElementById('counter');
+        counter.innerText = countState.toString();
+    }
+
+    let countState = 0;
+    renderUI();
+
+    const increment = () => {
+        // Logica de negocio
+        countState += 1;
+        console.log('countState atualizado para', countState);
+
+        // Atualização UI
+        renderUI(); // Não é necessario em frameworks JS
+    }
+
+    
+  </script>
+</body>
+</html>

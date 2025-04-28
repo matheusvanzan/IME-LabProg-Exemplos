@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador - UI Manual</title>
+</head>
+<body>
+  <h1>Somador</h1>
+  <input type="number" id="n1" /> +
+  <input type="number" id="n2" /> = 
+  <span id="result">0</span>
+
+  <script> 
+
+    const state = {
+      n1: 0,
+      n2: 0
+    }
+
+    const renderUI = () => {
+        console.log('Atualizando a UI...');
+        const resultLabel = document.getElementById('result');
+        resultLabel.innerHTML = state.n1 + state.n2;
+    }
+
+    renderUI();
+
+    // Eventos que vão atualizar o estado
+    const input1 = document.getElementById("n1");
+    input1.addEventListener('input', e => {
+      state.n1 = parseFloat(e.target.value);
+      console.log('state.n1 atualizado', state.n1);
+
+      renderUI();  
+    });
+
+    const input2 = document.getElementById("n2");
+    input2.addEventListener('input', e => {
+      state.n2 = parseFloat(e.target.value);
+      console.log('state.n2 atualizado', state.n2);
+
+      renderUI();  
+    });
+  
+  </script>
+</body>
+</html>

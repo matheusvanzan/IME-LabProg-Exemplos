@@ -1,0 +1,36 @@
+
+<main class="">
+  <div>
+    Contador
+    <p>{{ count }}</p>
+    <button (click)="inc()"> + </button>
+    <button> - </button>
+
+    <hr>
+
+    input 1: <input type="text" value="count" />
+    <br>
+    input 2: <input type="text" [value]="count" />
+    <br>
+    input 3: <input type="text" [value]="count" (input)="setCount($event)" />
+
+    <hr>
+
+    2 way binding
+    <br>
+    input 4: <input type="text" [(ngModel)]="count">
+
+    <hr>
+    Users
+    <br>
+    @for(user of users; track user.id) {
+      - User: {{ user.id }} - {{ user.name }} <br>
+    }
+
+    <hr>
+    Componente Somador
+    <br>
+    <app-somador />
+  </div>
+</main>
+
