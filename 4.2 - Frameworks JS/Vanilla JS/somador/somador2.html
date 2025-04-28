@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Soma Reativa</title>
+</head>
+<body>
+
+  <h1>Somador Reativo</h1>
+
+  <input type="number" id="num1"> + <input type="number" id="num2"> = <span id="resultado">0</span>
+
+  <script>
+    // Estado centralizado
+    const state = {
+      a: 0,
+      b: 0
+    };
+
+    function render() {
+      const soma = state.a + state.b;
+      document.getElementById('resultado').textContent = soma;
+      console.log(`Renderizando: ${state.a} + ${state.b} = ${soma}`);
+    }
+
+    // Atualizadores de estado
+    document.getElementById('num1').addEventListener('input', e => {
+      state.a = parseFloat(e.target.value) || 0;
+      render();
+    });
+
+    document.getElementById('num2').addEventListener('input', e => {
+      state.b = parseFloat(e.target.value) || 0;
+      render();
+    });
+
+    render(); // Inicial
+  </script>
+
+</body>
+</html>
