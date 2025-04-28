@@ -1,0 +1,36 @@
+<p>Main component</p>
+<p>Count: {{ count }}</p>
+<button (click)="decrement()">- Dec</button>
+<button (click)="increment()">+ Inc</button>
+
+<hr>
+
+input 1: <input type="text" value="count" [disabled]="disabled()" />
+<br>
+input 2: <input type="number" [value]="count" />
+<br>
+input 3: <input type="number" [value]="count" (input)="setCount($event)" /> 
+<!-- podia ser (change) para mudar so quando perder o foco -->
+
+<hr>
+ngModel - 2 way binding
+<br>
+input 4: <input type="text" [(ngModel)]="count" />
+<br>
+
+input 5: <input type="number" [ngModel]="count" (ngModelChange)="count = +$event" />
+
+<hr>
+
+<p>Users</p>
+@for (user of users; track user.id) {
+    - User: {{ user.id }} - {{ user.name }}<br>
+}
+
+<hr>
+Soma<br>
+a: <input type="number" [(ngModel)]="a" />
+<br>
+b: <input type="number" [(ngModel)]="b" />
+<br>
+{{ a }} + {{ b }} = {{ c() }}
