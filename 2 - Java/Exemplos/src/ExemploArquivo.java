@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ExemploArquivo {
 
@@ -18,7 +19,7 @@ public class ExemploArquivo {
 
         // Leitura
         ArrayList<String> fileItems = readFromFile();
-        System.out.println(fileItems.toString());
+        System.out.println(fileItems);
     }
 
     public static void writeToFile(String[] items) {
@@ -26,11 +27,17 @@ public class ExemploArquivo {
             FileWriter writer = new FileWriter(fileName, fileAppend);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
 
+            // Scanner sc = new Scanner(System.in);
+
             for (String item: items) {
                 bufferedWriter.write(item);
                 bufferedWriter.newLine();
+
+                // System.out.print("digite: ");
+                // sc.nextLine();
             }
- 
+
+            // sc.close();
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
