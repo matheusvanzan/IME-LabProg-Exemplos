@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 50px;
+
+                /* border: 1px solid red; */
+            }
+
+            form {
+                border: 1px solid gray;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            textarea {
+                width: 100%;
+            }
+
+            button {
+                width: 90%;
+                margin: 5px 5%;
+                color: #FFFFFF;
+                background-color: cadetblue;
+                border: none;
+                border-radius: 2px;
+                height: 30px;
+            }
+
+            #error {
+                color: red;
+            }
+        </style>
+
+        <script src="https://site.com/meu_script.js" ></script>
+    </head>
+    <body>
+        <h1>App de Notas</h1>
+
+        <form>
+            <textarea id="txt" rows="5" placeholder="Escreva sua nota aqui..."></textarea>
+            <button id="btn" type="submit">Add com button</button>
+            <span id="error"></span>
+            <!-- <input type="submit" value="Add com input" /> -->
+        </form>
+
+        <hr>
+        <h2>Minhas Notas 2</h2>
+
+        <ol id="listaNotas">
+            <li>Minhas nota default</li>
+        </ol>
+
+        <script>
+            const btn = document.getElementById('btn');
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                console.log('btn click');
+
+                const txt = document.getElementById('txt');
+                console.log(txt.value);
+
+                const spanError = document.getElementById('error');
+                if (txt.value === "") { // early return
+                    spanError.innerHTML = '<b>O campo não pode estar vazio</b>';
+
+                    return;
+                } else {
+                    spanError.innerHTML = '';
+                }
+
+                const nota = document.createElement('li');
+                nota.innerHTML = txt.value;
+
+                const ulNotas = document.getElementById('listaNotas');
+                ulNotas.appendChild(nota);
+
+                txt.value = '';
+
+                fetch('http://localhost:8080/add-nota', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'}
+                }).then(function (resp) { return resp.json(); })
+                .then(function (data) {
+                    console.log(data);
+                })
+
+                // alert('Nota adicionada com sucesso!');
+                // return;
+            });
+        </script>
+    </body>
+</html>

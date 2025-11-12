@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>App de Notas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    textarea, button {
+      width: 100%;
+      margin: 8px 0;
+      padding: 8px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .nota {
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    }
+
+    .nota p {
+      margin: 0;
+      color: #333;
+    }
+
+    .data {
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>App de Notas</h1>
+
+  <form id="formNota">
+    <textarea id="texto" rows="3" placeholder="Escreva sua nota..." required></textarea>
+    <button type="submit">Adicionar Nota</button>
+  </form>
+
+  <div id="listaNotas"></div>
+
+  <script>
+    const form = document.getElementById('formNota');
+    const lista = document.getElementById('listaNotas');
+
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const texto = document.getElementById('texto').value.trim();
+      if (!texto) return;
+
+      const agora = new Date();
+      const dataHora = agora.toLocaleString('pt-BR');
+
+      // Cria a nota na tela
+      const nota = document.createElement('div');
+      nota.classList.add('nota');
+      nota.innerHTML = `<p>${texto}</p><div class="data">Criada em: ${dataHora}</div>`;
+      lista.appendChild(nota);
+
+      // Limpa o campo
+      form.reset();
+
+      // Envia para o backend via POST
+      try {
+        const response = await fetch('http://localhost:8080/nota', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            texto: texto,
+            dataHora: dataHora
+          })
+        });
+
+        if (response.ok) {
+          console.log('Nota enviada com sucesso!');
+        } else {
+          console.error('Erro ao enviar nota:', response.status);
+        }
+      } catch (erro) {
+        console.error('Falha na conexão com o backend:', erro);
+      }
+    });
+  </script>
+
+</body>
+</html>

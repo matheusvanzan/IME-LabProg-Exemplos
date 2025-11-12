@@ -1,0 +1,23 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+
+        <button id="load-js">Click</button>
+
+
+        <script>
+            document.getElementById("load-js").addEventListener("click", function() {
+            console.log("Loading data using vanilla JS");
+
+            fetch('http://localhost:8090/')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error:', error));
+        });
+        </script>
+    </body>
+</html>

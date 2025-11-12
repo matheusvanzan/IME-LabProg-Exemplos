@@ -1,0 +1,42 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <p id="meu-p">Essa é aminha página</p>
+
+        <button id="btn-id">Click me</button>
+        
+        Status: <p></p>
+
+        <script>
+
+            function myFunc() {
+                console.log('Call myFunc');
+
+                let tagP = document.getElementById('meu-p');
+                console.log(tagP);
+            }
+
+
+            let btn = document.getElementById('btn-id');
+            btn.addEventListener('click', function() {
+
+                console.log('Call click event');
+
+                
+                fetch('http://localhost:8090/')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+                
+            });
+
+            btn.addEventListener('click', myFunc);
+
+
+        </script>
+    </body>
+</html>

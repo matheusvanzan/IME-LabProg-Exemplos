@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <!-- JS aqui vai ser executado antes do render da página -->
+         <script>
+
+            function soma(a, b) {
+                return a+b;
+            }
+
+            const soma2 = (a, b) => {
+                return a + b;
+            }
+
+            const a = 2;
+            const b = 3;
+            console.log('JS na head', soma2(a, b));
+         </script>
+    </head>
+    <body>
+        <h1>Minha pagina teste</h1>
+
+        <p id="meu-p1"></p>
+
+
+
+        <!-- JS aqui vai ser executado depois do render da página -->
+        <script>
+
+            console.log('JS no final do body', soma(3, 4));
+        </script>
+    </body>
+</html>
