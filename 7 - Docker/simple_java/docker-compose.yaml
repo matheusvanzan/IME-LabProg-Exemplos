@@ -1,0 +1,8 @@
+services:
+  java-app:    
+    image: eclipse-temurin:21-jdk-alpine
+    container_name: java-app-compose
+    working_dir: /app    
+    volumes:      
+      - ./code:/app    
+    command: ['sh', '-c', 'javac Hello.java && java Hello']
