@@ -1,0 +1,10 @@
+
+services:
+  java-app:
+    build: .
+    container_name: java-app-build
+    working_dir: /app
+    volumes:
+      - ./code:/app
+    # command: ['sh', '-c', 'javac Hello.java && java Hello']
+    command: ['java', 'Hello']

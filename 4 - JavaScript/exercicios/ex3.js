@@ -6,7 +6,7 @@ var users = [
 ];
 
 function generateUsernames(users) {
-    return users.map(user => user.toLowerCase().replace(/ /g, "_"));
+    return users.map(user => user.toLowerCase().replace(" ", "_"));
 }
 
 console.log(generateUsernames(users));
